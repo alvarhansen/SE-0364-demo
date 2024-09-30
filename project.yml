@@ -1,0 +1,68 @@
+name: SE_0364_Demo
+options:
+  bundleIdPrefix: com.example
+targets:
+  AppWithSwiftPackageName:
+    type: application
+    platform: iOS
+    settings:
+      base:
+        GENERATE_INFOPLIST_FILE: true
+        MARKETING_VERSION: 1.0
+        SWIFT_PACKAGE_NAME: SomeSwiftPackageName
+    sources:
+      - Sources/AppWithSwiftPackageName
+    dependencies:
+      - target: Framework1WithSwiftPackageName
+      - target: Framework2WithSwiftPackageName
+  Framework1WithSwiftPackageName:
+    type: framework
+    platform: iOS
+    settings:
+      base:
+        GENERATE_INFOPLIST_FILE: true
+        MARKETING_VERSION: 1.0
+        SWIFT_PACKAGE_NAME: SomeSwiftPackageName
+    sources:
+      - Sources/Framework1WithSwiftPackageName
+  Framework2WithSwiftPackageName:
+    type: framework
+    platform: iOS
+    settings:
+      base:
+        GENERATE_INFOPLIST_FILE: true
+        MARKETING_VERSION: 1.0
+        SWIFT_PACKAGE_NAME: SomeSwiftPackageName
+    sources:
+      - Sources/Framework2WithSwiftPackageName
+
+  AppWithoutSwiftPackageName:
+    type: application
+    platform: iOS
+    settings:
+      base:
+        GENERATE_INFOPLIST_FILE: true
+        MARKETING_VERSION: 1.0
+    sources:
+      - Sources/AppWithoutSwiftPackageName
+    dependencies:
+      - target: Framework1WithoutSwiftPackageName
+      - target: Framework2WithoutSwiftPackageName
+  Framework1WithoutSwiftPackageName:
+    type: framework
+    platform: iOS
+    settings:
+      base:
+        GENERATE_INFOPLIST_FILE: true
+        MARKETING_VERSION: 1.0
+    sources:
+      - Sources/Framework1WithoutSwiftPackageName
+  Framework2WithoutSwiftPackageName:
+    type: framework
+    platform: iOS
+    settings:
+      base:
+        GENERATE_INFOPLIST_FILE: true
+        MARKETING_VERSION: 1.0
+    sources:
+      - Sources/Framework2WithoutSwiftPackageName
